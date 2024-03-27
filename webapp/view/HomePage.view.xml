@@ -1,0 +1,18 @@
+<mvc:View controllerName="com.sap.project1.controller.HomePage"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+        <!-- <Text text="Name"/>
+         <Button  id="helloDialogButton"
+         text="Button"
+         press=".onButtonClicked"
+        />  -->
+         <Label text="Input with one way binding" class="sapUiSmallMargin"/>
+        <Input value="{path:'products>/title', mode:'OneWay'}"/>
+        <Label text="Input with two way binding" class="sapUiSmallMargin"/>
+        <Input value="{products>/title}"/>
+        <Text text="{products>/title}"/>
+        </content>
+    </Page>
+</mvc:View>
