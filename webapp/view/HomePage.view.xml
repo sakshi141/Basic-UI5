@@ -8,11 +8,43 @@
          text="Button"
          press=".onButtonClicked"
         />  -->
-         <Label text="Input with one way binding" class="sapUiSmallMargin"/>
+         <!-- <Label text="Input with one way binding" class="sapUiSmallMargin"/>
         <Input value="{path:'products>/title', mode:'OneWay'}"/>
         <Label text="Input with two way binding" class="sapUiSmallMargin"/>
         <Input value="{products>/title}"/>
-        <Text text="{products>/title}"/>
-        </content>
+        <Text text="{products>/title}"/> -->
+
+        <List items="{/products}" id="idProductsList" >
+            <headerToolbar> 
+
+                <Toolbar >
+                   <Title text="Products"></Title>
+                   <ToolbarSpacer />
+                   <SearchField width="30%" liveChange=".onSearchFieldLiveChange" ></SearchField>
+                </Toolbar>
+
+            </headerToolbar>
+        
+            <items>
+                <!-- <StandardListItem title="{title}" description="{description}"  icon="{thumbnail}" counter="{price}" /> -->
+                <CustomListItem >
+                    <HBox >
+                      <Image src="{thumbnail}" width="12rem" height="9rem"/>
+
+                      <VBox class="sapUiSmallMargin" justifyContent="SpaceBetween">
+                        <Text text="{title}"></Text>
+                        <Label text="{description}"></Label>
+                        <Text text="{price}"></Text>
+                        <RatingIndicator value="{rating}" editable="false" />
+
+                        <ObjectStatus text="{=${stock}>50?'In Stock':'Limited Stock'}" inverted="true" state="{=${stock}>50?'Success':'Warning'}" />
+                     </VBox>
+                    
+                    </HBox>
+                  
+                </CustomListItem>
+            </items>
+        </List>
+        </content> 
     </Page>
 </mvc:View>
