@@ -28,16 +28,20 @@
             <items>
                 <!-- <StandardListItem title="{title}" description="{description}"  icon="{thumbnail}" counter="{price}" /> -->
                 <CustomListItem >
-                    <HBox >
+                    <HBox width="100%" >
                       <Image src="{thumbnail}" width="12rem" height="9rem"/>
 
-                      <VBox class="sapUiSmallMargin" justifyContent="SpaceBetween">
+                      <VBox class="sapUiSmallMargin" justifyContent="SpaceBetween" width="90%">
                         <Text text="{title}"></Text>
                         <Label text="{description}"></Label>
                         <Text text="{price}"></Text>
                         <RatingIndicator value="{rating}" editable="false" />
 
                         <ObjectStatus text="{=${stock}>50?'In Stock':'Limited Stock'}" inverted="true" state="{=${stock}>50?'Success':'Warning'}" />
+                     </VBox>
+
+                     <VBox justifyContent="Center">
+                        <Button text="More Images" press=".onPress" />
                      </VBox>
                     
                     </HBox>
